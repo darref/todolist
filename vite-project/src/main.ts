@@ -35,13 +35,21 @@ saveButton.addEventListener( "click"  , (e1) =>
     newTask.style.border = "2px solid black";
     //
     let newLI = document.createElement("li");
-    newLI.innerText = taskText;
+    //
+    let newLIText = document.createElement("p");
+    newLIText.innerText = taskText;
+    newLIText.style.paddingLeft = "50px";
+    newLIText.style.paddingRight = "50px";
+    //
     newLI.style.border = "1px gray solid"
     newLI.style.margin = "20px"
     //ajout de la checkbox a la nouvelle li
     let newCheckbox = document.createElement("input");
     newCheckbox.type = "checkbox";
     newLI.append(newCheckbox);
+    ulTasks.append(newLI);
+    //
+    newLI.append(newLIText);
     //ajout du bouton remove a la new li
     let boutonRemove = document.createElement("button");
     boutonRemove.innerText = "Remove Task";
@@ -52,8 +60,15 @@ saveButton.addEventListener( "click"  , (e1) =>
     });
 
     newLI.append(boutonRemove);
+    boutonRemove.style.textAlign = "right";
     //
-    ulTasks.append(newLI);
+    newLI.style.textAlign = "justify";
+    newLI.style.padding = "20px";
+    //
+    newLI.style.display = "flex";
+    newLI.style.flexDirection = "columns";
+    // 
+    
   }
   
 });
