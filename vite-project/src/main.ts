@@ -23,7 +23,7 @@ divInputConteneur.appendChild(saveButton);
 //ajout de la UL des taches
 let ulTasks = document.createElement("ul");
 //event listener du bouton
-saveButton.addEventListener( "click"  , (e1) => 
+saveButton.addEventListener( "click"  , () => 
 {
   if(inputBox.value.length > 3)
   {
@@ -54,7 +54,7 @@ saveButton.addEventListener( "click"  , (e1) =>
     let boutonRemove = document.createElement("button");
     boutonRemove.innerText = "Remove Task";
 
-    boutonRemove.addEventListener("click" , (e2)=>
+    boutonRemove.addEventListener("click" , ()=>
     {
       newLI.remove();
     });
