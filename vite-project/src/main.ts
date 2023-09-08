@@ -67,8 +67,14 @@ saveButton.addEventListener( "click"  , () =>
     //
     newLI.style.display = "flex";
     newLI.style.flexDirection = "columns";
-    // 
-    
+    //ajout dans la base de données
+    fetch(`http://localhost:3030/addSentenceToBDD/${taskText}`)
+    .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text(); // Traitez la réponse ici si nécessaire.
+    })
   }
   
 });
